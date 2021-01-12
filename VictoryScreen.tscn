@@ -1,0 +1,85 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Goldie Boxing.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://blue_button12.png" type="Texture" id=2]
+[ext_resource path="res://VictoryScreen.gd" type="Script" id=3]
+[ext_resource path="res://blue_button11.png" type="Texture" id=4]
+[ext_resource path="res://bonzai.png" type="Texture" id=5]
+[ext_resource path="res://pikachu.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 35
+outline_color = Color( 0.00392157, 0.00392157, 0.00392157, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://the artisan.otf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 600
+font_data = SubResource( 2 )
+
+[node name="VictoryScreen" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1032.0
+margin_bottom = 600.0
+color = Color( 0.482353, 0.764706, 0.658824, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 294.628
+margin_top = 149.499
+margin_right = -289.372
+margin_bottom = -116.501
+custom_fonts/font = SubResource( 1 )
+text = "Congratulations!
+You have won the game!
+Once you have
+like three million dollars
+you can just invest in mutual funds
+and live on the profits from those 
+for the rest of your life."
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitButton" type="TextureButton" parent="ColorRect"]
+margin_left = 593.673
+margin_top = 438.948
+margin_right = 642.673
+margin_bottom = 487.948
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelGoodbye" type="Label" parent="ColorRect"]
+margin_left = 383.028
+margin_top = 438.948
+margin_right = 4202.03
+margin_bottom = 1633.95
+rect_scale = Vector2( 0.05, 0.05 )
+custom_fonts/font = SubResource( 3 )
+text = "GOODBYE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="ColorRect"]
+position = Vector2( 240.496, 193.406 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+
+[node name="Sprite2" type="Sprite" parent="ColorRect"]
+position = Vector2( 802.215, 198.452 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 6 )
+[connection signal="pressed" from="ColorRect/ExitButton" to="." method="_on_ExitButton_pressed"]

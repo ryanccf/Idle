@@ -1,0 +1,275 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Goldie Boxing.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://blue_button11.png" type="Texture" id=2]
+[ext_resource path="res://Game.gd" type="Script" id=3]
+[ext_resource path="res://beach.webp" type="Texture" id=4]
+[ext_resource path="res://the artisan.otf" type="DynamicFontData" id=5]
+[ext_resource path="res://sonicspinner.wav" type="AudioStream" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+outline_color = Color( 0.0509804, 0.0470588, 0.0470588, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://De Bambeet.otf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 300
+font_data = ExtResource( 5 )
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Background" type="ColorRect" parent="."]
+margin_left = -2.77125
+margin_top = -5.54785
+margin_right = 37.2288
+margin_bottom = 34.4521
+rect_scale = Vector2( 25.84, 15.28 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background Image" type="Sprite" parent="Background"]
+visible = false
+position = Vector2( 21.638, 19.5473 )
+scale = Vector2( 0.0776838, 0.0776838 )
+texture = ExtResource( 4 )
+
+[node name="Divider2" type="ColorRect" parent="Background"]
+margin_left = -1.0
+margin_top = 6.0
+margin_right = 41.0
+margin_bottom = 10.0
+color = Color( 0.937255, 0.937255, 0.937255, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label Monmons" type="Label" parent="Background"]
+margin_left = 0.541427
+margin_top = 6.81144
+margin_right = 174.541
+margin_bottom = 43.8115
+rect_scale = Vector2( 0.05, 0.05 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Big Monmons: $"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Count" type="Label" parent="Background"]
+margin_left = 19.0188
+margin_top = 6.98
+margin_right = 131.018
+margin_bottom = 60.98
+rect_scale = Vector2( 0.05, 0.05 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label Leads" type="Label" parent="Background"]
+margin_top = 37.048
+margin_right = 159.999
+margin_bottom = 91.048
+rect_scale = Vector2( 0.05, 0.05 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Leads:"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Leads" type="Label" parent="Background"]
+margin_left = 8.48143
+margin_top = 37.048
+margin_right = 120.482
+margin_bottom = 91.048
+rect_scale = Vector2( 0.05, 0.05 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label Agents" type="Label" parent="Background"]
+margin_left = 26.5187
+margin_top = 11.0
+margin_right = 186.518
+margin_bottom = 65.0
+rect_scale = Vector2( 0.05, 0.05 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Agents:"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Agents" type="Label" parent="Background"]
+margin_left = 34.954
+margin_top = 11.0
+margin_right = 146.954
+margin_bottom = 65.0
+rect_scale = Vector2( 0.05, 0.05 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Divider" type="ColorRect" parent="Background"]
+margin_left = 18.0
+margin_top = 35.0
+margin_right = 40.0
+margin_bottom = 40.0
+color = Color( 0.937255, 0.937255, 0.937255, 1 )
+
+[node name="Label Quarter" type="Label" parent="Background"]
+margin_left = 19.0188
+margin_top = 35.9027
+margin_right = 142.019
+margin_bottom = 85.9027
+rect_scale = Vector2( 0.08, 0.08 )
+custom_fonts/font = SubResource( 3 )
+text = "Quarter"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quarter" type="Label" parent="Background"]
+margin_left = 30.0
+margin_top = 36.0
+margin_right = 56.0
+margin_bottom = 86.0
+rect_scale = Vector2( 0.08, 0.08 )
+custom_fonts/font = SubResource( 3 )
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Year" type="Label" parent="Background"]
+margin_left = 35.0
+margin_top = 36.0
+margin_right = 98.0
+margin_bottom = 86.0
+rect_scale = Vector2( 0.08, 0.08 )
+custom_fonts/font = SubResource( 3 )
+text = "1969"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label Call" type="Label" parent="Background"]
+margin_left = 32.988
+margin_top = 32.3784
+margin_right = 192.988
+margin_bottom = 86.3784
+rect_scale = Vector2( 0.05, 0.05 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Call"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label Buy Leads" type="Label" parent="Background"]
+margin_top = 11.0
+margin_right = 438.0
+margin_bottom = 75.0
+rect_scale = Vector2( 0.05, 0.05 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "100 Leads ($10)"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label Buy Agent" type="Label" parent="Background"]
+margin_left = 2.26862
+margin_top = 14.9414
+margin_right = 390.269
+margin_bottom = 78.9414
+rect_scale = Vector2( 0.05, 0.05 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Agent ($100/Q)"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Background"]
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 2733.0
+margin_bottom = 599.0
+rect_scale = Vector2( 0.01, 0.01 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Call Center Simulator"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CallButton" type="TextureButton" parent="."]
+margin_left = 962.132
+margin_top = 470.166
+margin_right = 1011.13
+margin_bottom = 519.166
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BuyLeadsButton" type="TextureButton" parent="."]
+margin_left = 597.884
+margin_top = 162.532
+margin_right = 646.884
+margin_bottom = 211.532
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BuyAgentButton" type="TextureButton" parent="."]
+margin_left = 598.0
+margin_top = 223.0
+margin_right = 647.0
+margin_bottom = 272.0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tick" type="Timer" parent="."]
+autostart = true
+
+[node name="SpinnerSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+[connection signal="pressed" from="CallButton" to="." method="_on_CallButton_pressed"]
+[connection signal="pressed" from="BuyLeadsButton" to="." method="_on_BuyLeadsButton_pressed"]
+[connection signal="pressed" from="BuyAgentButton" to="." method="_on_BuyAgentButton_pressed"]
+[connection signal="timeout" from="Tick" to="." method="_on_Tick_timeout"]

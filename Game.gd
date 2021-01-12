@@ -51,8 +51,9 @@ func _on_Tick_timeout():
 	send_leads()
 
 func send_leads():
-	leads -= agents
-	emit_signal("send_lead")
+	if leads >= agents:
+		leads -= agents
+		emit_signal("send_lead")
 
 func refresh_view():
 	Count.text = String(counter)

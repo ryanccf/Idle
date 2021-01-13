@@ -8,6 +8,10 @@ var agents = 0
 var ticks = 0
 var year = 1969
 var quarter = 1
+var multiplier = 1
+var base_multiplier = 1.0
+var max_multiplier = 10
+var call_value = 25
 
 var Agent = preload("res://Agent.tscn")
 
@@ -16,6 +20,7 @@ onready var Leads = $Background/Leads
 onready var Agents = $Background/Agents
 onready var Year = $Background/Year
 onready var Quarter = $Background/Quarter
+onready var Multiplier = $Background/Multiplier
 
 const TICKS_PER_QUARTER = 90
 const VICTORY_CONDITION = 400000
@@ -28,27 +33,29 @@ func _on_CallButton_pressed():
 	refresh_view()
 
 func _on_BuyLeadsButton_pressed():
-	if counter > 9:
+	get_node("RideSound").play()
+	if counter >= 10:
 		leads += 100
 		counter -= 10
 	refresh_view()
 
 func _on_BuyAgentButton_pressed():
 	if counter > 99:
+		get_node("CrashSound").play()
 		counter -= 100
 		agents += 1
 		add_agent()
 
 func _on_Agent_sale(money):
-	add_money(money)
-	get_node("SpinnerSound").play()
+	add_money(stepify(money * multiplier, 0.01))
 
 func _on_Tick_timeout():
 	ticks += 1
-	refresh_view()
 	check_quarter()
 	check_win()
 	send_leads()
+	calc_multiplier()
+	refresh_view()
 
 func send_leads():
 	if leads >= agents:
@@ -60,16 +67,18 @@ func refresh_view():
 	Leads.text = String(leads)
 	Agents.text = String(agents)
 	Quarter.text = String(quarter)
-	Year.text = String(year)
+	Year.text = String(year)	
+	Multiplier.text = String(multiplier)
 
 func dial():
+	get_node("FloorTomSound").play()
 	if leads > 0:
 		leads -= 1
 		randomize()
 		var random_number = int(rand_range(1.0, 6.0))
 		if random_number == 1:
 			get_node("SpinnerSound").play()
-			counter += 25
+			counter += stepify(call_value * multiplier, 0.01)
 	refresh_view()
 
 func add_money(money):
@@ -85,6 +94,10 @@ func check_win():
 	if counter >= VICTORY_CONDITION:
 		get_tree().change_scene("res://VictoryScreen.tscn")
 
+func calc_multiplier():
+	if multiplier > base_multiplier:
+		multiplier -= 0.01
+
 func check_quarter():
 	if ticks > TICKS_PER_QUARTER:
 		ticks = 0
@@ -92,3 +105,9 @@ func check_quarter():
 		if quarter > 4:
 			quarter = 1
 			year += 1
+
+func _on_AdvertiseButton_pressed():
+	if multiplier <= max_multiplier:
+		get_node("StickSound").play()
+		multiplier += 0.1
+		refresh_view()

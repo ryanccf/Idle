@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Closed Hat.wav-298766a9f8c5f325acb030f37629e786.sample"
+
+[deps]
+
+source_file="res://audio/Closed Hat.wav"
+dest_files=[ "res://.import/Closed Hat.wav-298766a9f8c5f325acb030f37629e786.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

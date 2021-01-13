@@ -1,11 +1,16 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Goldie Boxing.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://blue_button11.png" type="Texture" id=2]
 [ext_resource path="res://Game.gd" type="Script" id=3]
 [ext_resource path="res://beach.webp" type="Texture" id=4]
 [ext_resource path="res://the artisan.otf" type="DynamicFontData" id=5]
-[ext_resource path="res://sonicspinner.wav" type="AudioStream" id=6]
+[ext_resource path="res://audio/sonicspinner.wav" type="AudioStream" id=6]
+[ext_resource path="res://blue_button12.png" type="Texture" id=7]
+[ext_resource path="res://audio/Floor Tom.wav" type="AudioStream" id=8]
+[ext_resource path="res://audio/Crash Cymbal.wav" type="AudioStream" id=9]
+[ext_resource path="res://audio/Ride Cymbal.wav" type="AudioStream" id=10]
+[ext_resource path="res://audio/Stick.wav" type="AudioStream" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
@@ -45,9 +50,8 @@ scale = Vector2( 0.0776838, 0.0776838 )
 texture = ExtResource( 4 )
 
 [node name="Divider2" type="ColorRect" parent="Background"]
-margin_left = -1.0
 margin_top = 6.0
-margin_right = 41.0
+margin_right = 40.0
 margin_bottom = 10.0
 color = Color( 0.937255, 0.937255, 0.937255, 1 )
 __meta__ = {
@@ -80,6 +84,33 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label Multiplier" type="Label" parent="Background"]
+margin_left = 0.541412
+margin_top = 34.3399
+margin_right = 160.54
+margin_bottom = 88.3399
+rect_scale = Vector2( 0.05, 0.05 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Clout x"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Multiplier" type="Label" parent="Background"]
+margin_left = 10.0
+margin_top = 34.0
+margin_right = 161.0
+margin_bottom = 88.0
+rect_scale = Vector2( 0.05, 0.05 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Label Leads" type="Label" parent="Background"]
 margin_top = 37.048
 margin_right = 159.999
@@ -107,9 +138,9 @@ __meta__ = {
 }
 
 [node name="Label Agents" type="Label" parent="Background"]
-margin_left = 26.5187
+margin_left = 25.7856
 margin_top = 11.0
-margin_right = 186.518
+margin_right = 185.785
 margin_bottom = 65.0
 rect_scale = Vector2( 0.05, 0.05 )
 custom_fonts/font = SubResource( 1 )
@@ -121,9 +152,9 @@ __meta__ = {
 }
 
 [node name="Agents" type="Label" parent="Background"]
-margin_left = 34.954
+margin_left = 33.7856
 margin_top = 11.0
-margin_right = 146.954
+margin_right = 145.786
 margin_bottom = 65.0
 rect_scale = Vector2( 0.05, 0.05 )
 custom_fonts/font = SubResource( 1 )
@@ -189,6 +220,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label Advertise" type="Label" parent="Background"]
+margin_left = 15.2523
+margin_top = 32.3784
+margin_right = 312.252
+margin_bottom = 86.3784
+rect_scale = Vector2( 0.05, 0.05 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Advertise($1)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Label Buy Leads" type="Label" parent="Background"]
 margin_top = 11.0
 margin_right = 438.0
@@ -196,7 +240,7 @@ margin_bottom = 75.0
 rect_scale = Vector2( 0.05, 0.05 )
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "100 Leads ($10)"
+text = "Leads (100/$10)"
 align = 2
 valign = 1
 __meta__ = {
@@ -204,10 +248,10 @@ __meta__ = {
 }
 
 [node name="Label Buy Agent" type="Label" parent="Background"]
-margin_left = 2.26862
-margin_top = 14.9414
-margin_right = 390.269
-margin_bottom = 78.9414
+margin_left = 1.5031
+margin_top = 15.8299
+margin_right = 389.504
+margin_bottom = 79.8299
 rect_scale = Vector2( 0.05, 0.05 )
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -242,6 +286,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="AdvertiseButton" type="TextureButton" parent="."]
+margin_left = 772.429
+margin_top = 470.166
+margin_right = 821.429
+margin_bottom = 519.166
+keep_pressed_outside = true
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 2 )
+texture_disabled = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="BuyLeadsButton" type="TextureButton" parent="."]
 margin_left = 597.884
 margin_top = 162.532
@@ -254,10 +311,10 @@ __meta__ = {
 }
 
 [node name="BuyAgentButton" type="TextureButton" parent="."]
-margin_left = 598.0
-margin_top = 223.0
-margin_right = 647.0
-margin_bottom = 272.0
+margin_left = 597.884
+margin_top = 230.491
+margin_right = 646.884
+margin_bottom = 279.491
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 2 )
 __meta__ = {
@@ -269,7 +326,20 @@ autostart = true
 
 [node name="SpinnerSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
+
+[node name="FloorTomSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[node name="CrashSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+
+[node name="RideSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[node name="StickSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
 [connection signal="pressed" from="CallButton" to="." method="_on_CallButton_pressed"]
+[connection signal="pressed" from="AdvertiseButton" to="." method="_on_AdvertiseButton_pressed"]
 [connection signal="pressed" from="BuyLeadsButton" to="." method="_on_BuyLeadsButton_pressed"]
 [connection signal="pressed" from="BuyAgentButton" to="." method="_on_BuyAgentButton_pressed"]
 [connection signal="timeout" from="Tick" to="." method="_on_Tick_timeout"]

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Floor Tom.wav-50d9cf8bfc8239688b60bb60d15598d0.sample"
+
+[deps]
+
+source_file="res://audio/Floor Tom.wav"
+dest_files=[ "res://.import/Floor Tom.wav-50d9cf8bfc8239688b60bb60d15598d0.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

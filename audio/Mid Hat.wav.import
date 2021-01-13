@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Mid Hat.wav-0452e05940ebaf1d0e5ff80a9fb9f02c.sample"
+
+[deps]
+
+source_file="res://audio/Mid Hat.wav"
+dest_files=[ "res://.import/Mid Hat.wav-0452e05940ebaf1d0e5ff80a9fb9f02c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

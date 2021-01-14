@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Goldie Boxing.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://blue_button11.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://audio/Crash Cymbal.wav" type="AudioStream" id=9]
 [ext_resource path="res://audio/Ride Cymbal.wav" type="AudioStream" id=10]
 [ext_resource path="res://audio/Stick.wav" type="AudioStream" id=11]
+[ext_resource path="res://audio/Closed Hat.wav" type="AudioStream" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
@@ -34,10 +35,10 @@ font_data = ExtResource( 5 )
 script = ExtResource( 3 )
 
 [node name="Background" type="ColorRect" parent="."]
-margin_left = -2.77125
-margin_top = -5.54785
-margin_right = 37.2288
-margin_bottom = 34.4521
+margin_left = -4.91981
+margin_top = -7.13525
+margin_right = 35.0802
+margin_bottom = 32.8647
 rect_scale = Vector2( 25.84, 15.28 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -138,10 +139,10 @@ __meta__ = {
 }
 
 [node name="Label Agents" type="Label" parent="Background"]
-margin_left = 25.7856
-margin_top = 13.7
-margin_right = 185.785
-margin_bottom = 67.7
+margin_left = 0.861053
+margin_top = 25.5432
+margin_right = 160.86
+margin_bottom = 79.5432
 rect_scale = Vector2( 0.05, 0.05 )
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -152,10 +153,10 @@ __meta__ = {
 }
 
 [node name="Agents" type="Label" parent="Background"]
-margin_left = 33.7856
-margin_top = 14.2068
-margin_right = 145.786
-margin_bottom = 68.2068
+margin_left = 8.86102
+margin_top = 26.05
+margin_right = 120.861
+margin_bottom = 80.05
 rect_scale = Vector2( 0.05, 0.05 )
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -164,11 +165,38 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Managers" type="Label" parent="Background"]
+margin_left = 12.7312
+margin_top = 29.0627
+margin_right = 124.732
+margin_bottom = 83.0627
+rect_scale = Vector2( 0.05, 0.05 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label Managers" type="Label" parent="Background"]
+margin_left = 0.973999
+margin_top = 28.7027
+margin_right = 234.974
+margin_bottom = 82.7027
+rect_scale = Vector2( 0.05, 0.05 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Managers:"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Label Wages" type="Label" parent="Background"]
-margin_left = 25.7856
-margin_top = 11.0
-margin_right = 185.785
-margin_bottom = 65.0
+margin_left = 22.9765
+margin_top = 10.8961
+margin_right = 182.976
+margin_bottom = 64.8961
 rect_scale = Vector2( 0.05, 0.05 )
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -179,14 +207,41 @@ __meta__ = {
 }
 
 [node name="Wages" type="Label" parent="Background"]
-margin_left = 34.0
+margin_left = 31.4367
 margin_top = 11.0
-margin_right = 146.0
+margin_right = 143.437
 margin_bottom = 65.0
 rect_scale = Vector2( 0.05, 0.05 )
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label Close" type="Label" parent="Background"]
+margin_left = 23.5909
+margin_top = 15.1555
+margin_right = 207.591
+margin_bottom = 69.1555
+rect_scale = Vector2( 0.05, 0.05 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Close %:"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Close" type="Label" parent="Background"]
+margin_left = 34.0169
+margin_top = 15.3633
+margin_right = 146.017
+margin_bottom = 69.3633
+rect_scale = Vector2( 0.05, 0.05 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "25"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -261,9 +316,10 @@ __meta__ = {
 }
 
 [node name="Label Buy Leads" type="Label" parent="Background"]
-margin_top = 11.0
-margin_right = 438.0
-margin_bottom = 75.0
+margin_left = -0.737184
+margin_top = 10.8961
+margin_right = 437.263
+margin_bottom = 74.8961
 rect_scale = Vector2( 0.05, 0.05 )
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -275,14 +331,29 @@ __meta__ = {
 }
 
 [node name="Label Buy Agent" type="Label" parent="Background"]
-margin_left = 1.5031
-margin_top = 15.8299
-margin_right = 389.504
-margin_bottom = 79.8299
+margin_left = 1.03394
+margin_top = 14.6513
+margin_right = 389.035
+margin_bottom = 78.6513
 rect_scale = Vector2( 0.05, 0.05 )
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Agent ($100/Q)"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label Buy Manager" type="Label" parent="Background"]
+margin_left = 0.84964
+margin_top = 18.1834
+margin_right = 468.85
+margin_bottom = 82.1834
+rect_scale = Vector2( 0.05, 0.05 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Manager ($500/Q)"
 align = 2
 valign = 1
 __meta__ = {
@@ -327,10 +398,10 @@ __meta__ = {
 }
 
 [node name="BuyLeadsButton" type="TextureButton" parent="."]
-margin_left = 597.884
-margin_top = 162.532
-margin_right = 646.884
-margin_bottom = 211.532
+margin_left = 542.613
+margin_top = 151.235
+margin_right = 591.613
+margin_bottom = 200.235
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 2 )
 __meta__ = {
@@ -338,10 +409,21 @@ __meta__ = {
 }
 
 [node name="BuyAgentButton" type="TextureButton" parent="."]
-margin_left = 597.884
-margin_top = 230.491
-margin_right = 646.884
-margin_bottom = 279.491
+margin_left = 542.613
+margin_top = 213.833
+margin_right = 591.613
+margin_bottom = 262.833
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BuyManagerButton" type="TextureButton" parent="."]
+margin_left = 634.682
+margin_top = 259.868
+margin_right = 683.682
+margin_bottom = 308.868
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 2 )
 __meta__ = {
@@ -365,8 +447,12 @@ stream = ExtResource( 10 )
 
 [node name="StickSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
+
+[node name="ClosedHatSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
 [connection signal="pressed" from="CallButton" to="." method="_on_CallButton_pressed"]
 [connection signal="pressed" from="AdvertiseButton" to="." method="_on_AdvertiseButton_pressed"]
 [connection signal="pressed" from="BuyLeadsButton" to="." method="_on_BuyLeadsButton_pressed"]
 [connection signal="pressed" from="BuyAgentButton" to="." method="_on_BuyAgentButton_pressed"]
+[connection signal="pressed" from="BuyManagerButton" to="." method="_on_BuyManagerButton_pressed"]
 [connection signal="timeout" from="Tick" to="." method="_on_Tick_timeout"]

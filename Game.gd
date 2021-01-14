@@ -1,11 +1,14 @@
 extends Node2D
 
-signal send_lead
+signal send_lead(close_percent)
 
-var counter = 0
+var base_close_percent = 25
+var counter = 1000
 var leads = 30
 var lead_price = 1
 var agents = 0
+var managers = 0
+var manager_price = 500
 var agent_price = 100
 var ticks = 0
 var year = 1969
@@ -25,6 +28,8 @@ onready var Year = $Background/Year
 onready var Quarter = $Background/Quarter
 onready var Multiplier = $Background/Multiplier
 onready var Wages = $Background/Wages
+onready var Managers = $Background/Managers
+onready var Close = $Background/Close
 
 const TICKS_PER_QUARTER = 90
 const VICTORY_CONDITION = 400000
@@ -52,6 +57,14 @@ func _on_BuyAgentButton_pressed():
 		add_agent()
 	refresh_view()
 
+func _on_BuyManagerButton_pressed():
+	if counter >= manager_price:
+		counter -= manager_price
+		managers += 1
+		get_node("ClosedHatSound").play()
+		update_wages()
+	refresh_view()
+
 func _on_Agent_sale(money):
 	add_money(stepify(money * multiplier, 0.01))
 
@@ -71,7 +84,7 @@ func _on_Tick_timeout():
 	refresh_view()
 
 func update_wages():
-	wages = (agents * agent_price)
+	wages = (agents * agent_price) + (managers * manager_price)
 
 func pay_payroll():
 	counter -= wages
@@ -79,7 +92,7 @@ func pay_payroll():
 func send_leads():
 	if leads >= agents:
 		leads -= agents
-		emit_signal("send_lead")
+		emit_signal("send_lead", base_close_percent + managers)
 
 func refresh_view():
 	Count.text = String(counter)
@@ -89,6 +102,8 @@ func refresh_view():
 	Year.text = String(year)	
 	Multiplier.text = String(multiplier)
 	Wages.text = String(wages)
+	Managers.text = String(managers)
+	Close.text = String(base_close_percent + managers)
 
 func dial():
 	get_node("FloorTomSound").play()
@@ -107,7 +122,6 @@ func add_agent():
 	var agent = Agent.instance()
 	add_child(agent)
 	agent.connect("sale", self, "_on_Agent_sale")
-	agent.connect("call", self, "_on_Agent_call")
 	
 func check_win():
 	if counter >= VICTORY_CONDITION:

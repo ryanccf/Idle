@@ -139,9 +139,9 @@ __meta__ = {
 
 [node name="Label Agents" type="Label" parent="Background"]
 margin_left = 25.7856
-margin_top = 11.0
+margin_top = 13.7
 margin_right = 185.785
-margin_bottom = 65.0
+margin_bottom = 67.7
 rect_scale = Vector2( 0.05, 0.05 )
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -153,8 +153,35 @@ __meta__ = {
 
 [node name="Agents" type="Label" parent="Background"]
 margin_left = 33.7856
-margin_top = 11.0
+margin_top = 14.2068
 margin_right = 145.786
+margin_bottom = 68.2068
+rect_scale = Vector2( 0.05, 0.05 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label Wages" type="Label" parent="Background"]
+margin_left = 25.7856
+margin_top = 11.0
+margin_right = 185.785
+margin_bottom = 65.0
+rect_scale = Vector2( 0.05, 0.05 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Wages:"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wages" type="Label" parent="Background"]
+margin_left = 34.0
+margin_top = 11.0
+margin_right = 146.0
 margin_bottom = 65.0
 rect_scale = Vector2( 0.05, 0.05 )
 custom_fonts/font = SubResource( 1 )

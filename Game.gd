@@ -40,7 +40,6 @@ func _ready():
 	refresh_view()
 																																																																																																				
 func _on_CallButton_pressed():
-	
 	var deck = Deck.instance()                                                                                                                                                                                                                                                                          
 	var first_card = Card.instance()
 	var second_card = Card.instance()
@@ -52,6 +51,8 @@ func _on_CallButton_pressed():
 	deck.add_card(first_card)
 	deck.add_card(second_card)
 	deck.add_card(third_card)
+
+	deck.shuffle()
 
 	deck.list_cards()
 	#dial()

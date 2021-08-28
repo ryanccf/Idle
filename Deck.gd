@@ -6,6 +6,9 @@ var cards = []
 func add_card(card):
 	self.cards.push_front(card)
 
+func shuffle():
+	self.cards.shuffle();
+
 func set_name(name):
 	self.deckName = name
 

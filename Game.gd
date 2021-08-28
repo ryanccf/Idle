@@ -21,6 +21,7 @@ var wages = 0
 
 var Agent = preload("res://Agent.tscn")
 var Card = preload("res://Card.tscn")
+var Deck = preload("res://Deck.tscn")
 
 onready var Count = $Background/Count
 onready var Leads = $Background/Leads
@@ -37,11 +38,22 @@ const VICTORY_CONDITION = 400000
 
 func _ready():
 	refresh_view()
-
+																																																																																																				
 func _on_CallButton_pressed():
-	var card = Card.instance()
-	card.set_value("Queen of Hearts")
-	print(card.get_value())
+	
+	var deck = Deck.instance()                                                                                                                                                                                                                                                                          
+	var first_card = Card.instance()
+	var second_card = Card.instance()
+	var third_card = Card.instance()
+	first_card.set_value("Queen of Hearts")
+	second_card.set_value("King of Diamonds")
+	third_card.set_value("2 of Clubs")
+	
+	deck.add_card(first_card)
+	deck.add_card(second_card)
+	deck.add_card(third_card)
+
+	deck.list_cards()
 	#dial()
 	#refresh_view()
 

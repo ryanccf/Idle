@@ -450,6 +450,7 @@ stream = ExtResource( 11 )
 
 [node name="ClosedHatSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
+
 [connection signal="pressed" from="CallButton" to="." method="_on_CallButton_pressed"]
 [connection signal="pressed" from="AdvertiseButton" to="." method="_on_AdvertiseButton_pressed"]
 [connection signal="pressed" from="BuyLeadsButton" to="." method="_on_BuyLeadsButton_pressed"]

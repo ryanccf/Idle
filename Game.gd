@@ -20,6 +20,7 @@ var call_value = 25
 var wages = 0
 
 var Agent = preload("res://Agent.tscn")
+var Card = preload("res://Card.tscn")
 
 onready var Count = $Background/Count
 onready var Leads = $Background/Leads
@@ -38,8 +39,11 @@ func _ready():
 	refresh_view()
 
 func _on_CallButton_pressed():
-	dial()
-	refresh_view()
+	var card = Card.instance()
+	card.set_value("Queen of Hearts")
+	print(card.get_value())
+	#dial()
+	#refresh_view()
 
 func _on_BuyLeadsButton_pressed():
 	get_node("RideSound").play()

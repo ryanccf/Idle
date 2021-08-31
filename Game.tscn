@@ -1,45 +1,43 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Goldie Boxing.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://blue_button11.png" type="Texture" id=2]
 [ext_resource path="res://Game.gd" type="Script" id=3]
 [ext_resource path="res://beach.webp" type="Texture" id=4]
 [ext_resource path="res://the artisan.otf" type="DynamicFontData" id=5]
-[ext_resource path="res://audio/sonicspinner.wav" type="AudioStream" id=6]
-[ext_resource path="res://blue_button12.png" type="Texture" id=7]
-[ext_resource path="res://audio/Floor Tom.wav" type="AudioStream" id=8]
-[ext_resource path="res://audio/Crash Cymbal.wav" type="AudioStream" id=9]
-[ext_resource path="res://audio/Ride Cymbal.wav" type="AudioStream" id=10]
-[ext_resource path="res://audio/Stick.wav" type="AudioStream" id=11]
-[ext_resource path="res://audio/Closed Hat.wav" type="AudioStream" id=12]
 
 [sub_resource type="DynamicFont" id=1]
+size = 300
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
 size = 60
 outline_color = Color( 0.0509804, 0.0470588, 0.0470588, 1 )
 font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFontData" id=2]
-font_path = "res://De Bambeet.otf"
-
-[sub_resource type="DynamicFont" id=3]
-size = 40
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-font_data = SubResource( 2 )
-
-[sub_resource type="DynamicFont" id=4]
-size = 300
-font_data = ExtResource( 5 )
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="Background" type="ColorRect" parent="."]
-margin_left = -4.91981
-margin_top = -7.13525
-margin_right = 35.0802
-margin_bottom = 32.8647
+margin_left = -0.514542
+margin_top = -7.91011
+margin_right = 39.4855
+margin_bottom = 32.0899
 rect_scale = Vector2( 25.84, 15.28 )
+color = Color( 0.0980392, 0.286275, 0.192157, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Background"]
+margin_left = 6.32013
+margin_top = 4.34753
+margin_right = 2740.32
+margin_bottom = 602.348
+rect_scale = Vector2( 0.01, 0.01 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Interstellar Black Jack"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -51,409 +49,63 @@ scale = Vector2( 0.0776838, 0.0776838 )
 texture = ExtResource( 4 )
 
 [node name="Divider2" type="ColorRect" parent="Background"]
-margin_top = 6.0
-margin_right = 40.0
-margin_bottom = 10.0
+margin_left = -0.0258714
+margin_top = 35.926
+margin_right = 39.9741
+margin_bottom = 39.926
 color = Color( 0.937255, 0.937255, 0.937255, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label Monmons" type="Label" parent="Background"]
-margin_left = 0.541427
-margin_top = 6.81144
-margin_right = 174.541
-margin_bottom = 43.8115
+[node name="Label $" type="Label" parent="Background"]
+margin_left = 0.540999
+margin_top = 36.8685
+margin_right = 353.541
+margin_bottom = 90.8685
 rect_scale = Vector2( 0.05, 0.05 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Big Monmons: $"
+text = "Cash: $"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Count" type="Label" parent="Background"]
-margin_left = 19.0188
-margin_top = 6.98
-margin_right = 131.018
-margin_bottom = 60.98
+margin_left = 9.67143
+margin_top = 36.9127
+margin_right = 481.671
+margin_bottom = 90.9127
 rect_scale = Vector2( 0.05, 0.05 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label Multiplier" type="Label" parent="Background"]
-margin_left = 0.541412
-margin_top = 34.3399
-margin_right = 160.54
-margin_bottom = 88.3399
+[node name="Label Hit" type="Label" parent="Background"]
+margin_left = 32.845
+margin_top = 36.738
+margin_right = 121.845
+margin_bottom = 90.738
 rect_scale = Vector2( 0.05, 0.05 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Clout x"
-align = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Multiplier" type="Label" parent="Background"]
-margin_left = 10.0
-margin_top = 34.0
-margin_right = 161.0
-margin_bottom = 88.0
-rect_scale = Vector2( 0.05, 0.05 )
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "1"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label Leads" type="Label" parent="Background"]
-margin_top = 37.048
-margin_right = 159.999
-margin_bottom = 91.048
-rect_scale = Vector2( 0.05, 0.05 )
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Leads:"
-align = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Leads" type="Label" parent="Background"]
-margin_left = 8.48143
-margin_top = 37.048
-margin_right = 120.482
-margin_bottom = 91.048
-rect_scale = Vector2( 0.05, 0.05 )
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "0"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label Agents" type="Label" parent="Background"]
-margin_left = 0.861053
-margin_top = 25.5432
-margin_right = 160.86
-margin_bottom = 79.5432
-rect_scale = Vector2( 0.05, 0.05 )
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Agents:"
-align = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Agents" type="Label" parent="Background"]
-margin_left = 8.86102
-margin_top = 26.05
-margin_right = 120.861
-margin_bottom = 80.05
-rect_scale = Vector2( 0.05, 0.05 )
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "0"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Managers" type="Label" parent="Background"]
-margin_left = 12.7312
-margin_top = 29.0627
-margin_right = 124.732
-margin_bottom = 83.0627
-rect_scale = Vector2( 0.05, 0.05 )
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "0"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label Managers" type="Label" parent="Background"]
-margin_left = 0.973999
-margin_top = 28.7027
-margin_right = 234.974
-margin_bottom = 82.7027
-rect_scale = Vector2( 0.05, 0.05 )
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Managers:"
-align = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label Wages" type="Label" parent="Background"]
-margin_left = 22.9765
-margin_top = 10.8961
-margin_right = 182.976
-margin_bottom = 64.8961
-rect_scale = Vector2( 0.05, 0.05 )
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Wages:"
-align = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Wages" type="Label" parent="Background"]
-margin_left = 31.4367
-margin_top = 11.0
-margin_right = 143.437
-margin_bottom = 65.0
-rect_scale = Vector2( 0.05, 0.05 )
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "0"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label Close" type="Label" parent="Background"]
-margin_left = 23.5909
-margin_top = 15.1555
-margin_right = 207.591
-margin_bottom = 69.1555
-rect_scale = Vector2( 0.05, 0.05 )
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Close %:"
-align = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Close" type="Label" parent="Background"]
-margin_left = 34.0169
-margin_top = 15.3633
-margin_right = 146.017
-margin_bottom = 69.3633
-rect_scale = Vector2( 0.05, 0.05 )
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "25"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Divider" type="ColorRect" parent="Background"]
-margin_left = 18.0
-margin_top = 35.0
-margin_right = 40.0
-margin_bottom = 40.0
-color = Color( 0.937255, 0.937255, 0.937255, 1 )
-
-[node name="Label Quarter" type="Label" parent="Background"]
-margin_left = 19.0188
-margin_top = 35.9027
-margin_right = 142.019
-margin_bottom = 85.9027
-rect_scale = Vector2( 0.08, 0.08 )
-custom_fonts/font = SubResource( 3 )
-text = "Quarter"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Quarter" type="Label" parent="Background"]
-margin_left = 30.0
-margin_top = 36.0
-margin_right = 56.0
-margin_bottom = 86.0
-rect_scale = Vector2( 0.08, 0.08 )
-custom_fonts/font = SubResource( 3 )
-text = "1"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Year" type="Label" parent="Background"]
-margin_left = 35.0
-margin_top = 36.0
-margin_right = 98.0
-margin_bottom = 86.0
-rect_scale = Vector2( 0.08, 0.08 )
-custom_fonts/font = SubResource( 3 )
-text = "1969"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label Call" type="Label" parent="Background"]
-margin_left = 32.988
-margin_top = 32.3784
-margin_right = 192.988
-margin_bottom = 86.3784
-rect_scale = Vector2( 0.05, 0.05 )
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Call"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label Advertise" type="Label" parent="Background"]
-margin_left = 15.2523
-margin_top = 32.3784
-margin_right = 312.252
-margin_bottom = 86.3784
-rect_scale = Vector2( 0.05, 0.05 )
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Advertise($1)"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label Buy Leads" type="Label" parent="Background"]
-margin_left = -0.737184
-margin_top = 10.8961
-margin_right = 437.263
-margin_bottom = 74.8961
-rect_scale = Vector2( 0.05, 0.05 )
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Leads (100/$10)"
-align = 2
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label Buy Agent" type="Label" parent="Background"]
-margin_left = 1.03394
-margin_top = 14.6513
-margin_right = 389.035
-margin_bottom = 78.6513
-rect_scale = Vector2( 0.05, 0.05 )
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Agent ($100/Q)"
-align = 2
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label Buy Manager" type="Label" parent="Background"]
-margin_left = 0.84964
-margin_top = 18.1834
-margin_right = 468.85
-margin_bottom = 82.1834
-rect_scale = Vector2( 0.05, 0.05 )
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Manager ($500/Q)"
-align = 2
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Title" type="Label" parent="Background"]
-margin_left = 1.0
-margin_top = 1.0
-margin_right = 2733.0
-margin_bottom = 599.0
-rect_scale = Vector2( 0.01, 0.01 )
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Call Center Simulator"
+text = "Hit"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CallButton" type="TextureButton" parent="."]
-margin_left = 962.132
-margin_top = 470.166
-margin_right = 1011.13
-margin_bottom = 519.166
+margin_left = 974.165
+margin_top = 549.72
+margin_right = 1023.17
+margin_bottom = 598.72
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="AdvertiseButton" type="TextureButton" parent="."]
-margin_left = 772.429
-margin_top = 470.166
-margin_right = 821.429
-margin_bottom = 519.166
-keep_pressed_outside = true
-texture_normal = ExtResource( 2 )
-texture_pressed = ExtResource( 2 )
-texture_disabled = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="BuyLeadsButton" type="TextureButton" parent="."]
-margin_left = 542.613
-margin_top = 151.235
-margin_right = 591.613
-margin_bottom = 200.235
-texture_normal = ExtResource( 2 )
-texture_pressed = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="BuyAgentButton" type="TextureButton" parent="."]
-margin_left = 542.613
-margin_top = 213.833
-margin_right = 591.613
-margin_bottom = 262.833
-texture_normal = ExtResource( 2 )
-texture_pressed = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="BuyManagerButton" type="TextureButton" parent="."]
-margin_left = 634.682
-margin_top = 259.868
-margin_right = 683.682
-margin_bottom = 308.868
-texture_normal = ExtResource( 2 )
-texture_pressed = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Tick" type="Timer" parent="."]
-autostart = true
-
-[node name="SpinnerSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 6 )
-
-[node name="FloorTomSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 8 )
-
-[node name="CrashSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 9 )
-
-[node name="RideSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 10 )
-
-[node name="StickSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 11 )
-
-[node name="ClosedHatSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 12 )
 
 [connection signal="pressed" from="CallButton" to="." method="_on_CallButton_pressed"]
-[connection signal="pressed" from="AdvertiseButton" to="." method="_on_AdvertiseButton_pressed"]
-[connection signal="pressed" from="BuyLeadsButton" to="." method="_on_BuyLeadsButton_pressed"]
-[connection signal="pressed" from="BuyAgentButton" to="." method="_on_BuyAgentButton_pressed"]
-[connection signal="pressed" from="BuyManagerButton" to="." method="_on_BuyManagerButton_pressed"]
-[connection signal="timeout" from="Tick" to="." method="_on_Tick_timeout"]
